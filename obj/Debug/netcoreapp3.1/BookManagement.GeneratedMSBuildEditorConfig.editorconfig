@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = BookManagement
+build_property.ProjectDir = D:\C#\BookStoreUsingC#EFCore\BookManagement\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

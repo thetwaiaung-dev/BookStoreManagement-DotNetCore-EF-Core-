@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<BookManagement.Models.BookCategory> ;
+<div class="w-100 mb-3">
+    <img src="~/photos/coverBookPhoto.jpg" class="img-thumbnail" style="width:100rem;height:20rem" />
+</div>
+<div class="container mb-3">
+    <div>
+        <h3>Popular Books</h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-1">
+        <div class="col">
+            <div class="card h-100">
+                <div>
+                    <img src="~/photos/indexPhoto.jpg" class="w-100 h-100" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="justify-content-end d-flex">
+        <button class="btn btn-primary">See more</button>
+    </div>
+</div>
+
+<!--Category-->
+<div class="container mb-3" style="margin-bottom:100px">
+    <div>
+        <h3>Category</h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-1 ">
+        @foreach(var item in Model.Take(3))
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <div>
+                        <img src="~/photos/indexPhoto.jpg" class="w-100 h-100" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Category_Name</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@item.CreatedDate</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="justify-content-end d-flex">
+        <button class="btn btn-primary">See more</button>
+    </div>
+</div>
