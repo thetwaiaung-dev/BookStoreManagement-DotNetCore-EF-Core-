@@ -63,5 +63,27 @@ namespace BookManagement.Models
                 Book = model.Book,
             };
         }
+
+        public static BookAuthor Change(this AuthorDto dto)
+        {
+            if (dto == null) return null;
+
+            return new BookAuthor()
+            {
+                Author_Id = dto.Author_Id,
+                Author_Name = dto.Author_Name
+            };
+        }
+
+        public static AuthorDto Change(this BookAuthor model)
+        {
+            if (model == null) return null;
+
+            return new AuthorDto()
+            {
+                Author_Id = model.Author_Id,
+                Author_Name = model.Author_Name
+            };
+        }
     }
 }

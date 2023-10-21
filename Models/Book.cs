@@ -16,7 +16,6 @@ namespace BookManagement.Models
         [Required]
         public short TotalPages { get; set; }
 
-        [JsonIgnore]
         public ICollection<Page> Pages { get; set; } =new List<Page>();
 
         [Required]

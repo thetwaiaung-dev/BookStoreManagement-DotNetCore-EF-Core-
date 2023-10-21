@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BookManagement.Models
 {
@@ -16,6 +17,7 @@ namespace BookManagement.Models
 
         [Required]
         public long Book_Id {  get; set; }
+        [JsonIgnore]
         public Book Book { get; set; } = null!;
 
     }

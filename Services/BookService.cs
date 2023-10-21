@@ -31,6 +31,7 @@ namespace BookManagement.Services
         {
             var books = _dbContext.Book.Include(x=>x.Author)
                                         .Include(x=>x.Category)
+                                        .Include(x=>x.Pages)
                                         .OrderByDescending(x => x.Book_Id)
                                         .ToList();
             return books;

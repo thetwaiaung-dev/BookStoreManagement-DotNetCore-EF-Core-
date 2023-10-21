@@ -2,6 +2,7 @@
 using BookManagement.Models;
 using BookManagement.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace BookManagement.Controllers
 {
@@ -10,14 +11,16 @@ namespace BookManagement.Controllers
         private readonly BookService _bookService;
         private readonly CategoryService _categoryService;
         private readonly PageService _pageService;
+        private readonly AuthorService _authorService;
 
         public BookController(BookService bookService,
                               CategoryService categoryService,
-                              PageService pageService)
+                              PageService pageService,AuthorService authorService)
         {
             _bookService = bookService;
             _categoryService=categoryService;
             _pageService=pageService;
+            _authorService = authorService;
         }
 
         [HttpGet]
@@ -26,6 +29,15 @@ namespace BookManagement.Controllers
             var books = _bookService.GetAll();
             var categories=_categoryService.GetAll();
             ViewData["books"]=books;
+            return View(categories);
+        }
+
+        [HttpGet]
+        public ActionResult AllBooks()
+        {
+            var books = _bookService.GetAll();
+            var categories = _categoryService.GetAll();
+            ViewData["books"] = books;
             return View(categories);
         }
 
@@ -112,6 +124,50 @@ namespace BookManagement.Controllers
             int result=_pageService.Update(model);
 
             string message = result > 0 ? "Success" : "Failed";
+            return Ok(message);
+        }
+
+        [HttpGet]
+        public IActionResult GetAllAuthor()
+        {
+            List<BookAuthor> authors = _authorService.GetAll();
+            return Ok(authors);
+        }
+
+        [HttpPost]
+        public IActionResult CreateAuthor([FromBody]AuthorDto dto)
+        {
+            if(dto == null)
+            {
+                return BadRequest();
+            }
+
+            BookAuthor model = ChangeModel.Change(dto);
+            int result= _authorService.Create(model);
+
+            string message = result > 0 ? "Success" : "Failed";
+            return Ok(message);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateAuthor([FromBody]AuthorDto dto)
+        {
+            if (dto == null)
+            {
+                return BadRequest();
+            }
+
+            BookAuthor model = _authorService.GetById(dto.Author_Id);
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            model.Author_Name = dto.Author_Name;
+
+            int result= _authorService.Update(model);
+            string message = result > 0 ? "Success" : "Failed";
+
             return Ok(message);
         }
     }

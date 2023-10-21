@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var books = ViewData["books"] as IEnumerable<Book>;
+}
+@model IEnumerable<BookManagement.Models.BookCategory> ;
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2">
+            <div>
+                <h3>Categories</h3>
+            </div>
+            <div>
+                <ul class="list-group list-group-flush align-items-start">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-group-item p-0">
+                            <a class="nav-link text-dark" href="#item-1-1">@item.Category_Name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="container mb-3">
+                <div>
+                    <h3>Popular Books</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-1">
+                    @foreach (var item in books)
+                    {
+                        <div class="col-sm-4 p-0">
+                            <a class="nav-link" href="#">
+                                <div class="card h-100">
+                                    <div>
+                                        <img src="~/photos/indexPhoto.jpg" class="w-100 h-100" />
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Book_Title</h5>
+                                        <p class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer ">
+                                       <div class="row">
+                                            <div class="col-sm-4">
+                                                <small class="d-flex text-muted">Author</small>
+                                            </div>
+                                            <div class="col-sm-8 justify-content-end d-flex ">
+                                                <small class=" text-muted d-flex">@item.Author.Author_Name</small>
+                                            </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
