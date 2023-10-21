@@ -14,12 +14,15 @@ namespace BookManagement.Services
         {
             _dbContext = dbContext;
         }
-        public void Create(Book entity)
+
+        public int Create(Book entity)
         {
-            throw new System.NotImplementedException();
+            _dbContext.Book.Add(entity);
+            int result =_dbContext.SaveChanges();
+            return result;
         }
 
-        public void Delete(Book entity)
+        public int Delete(Book entity)
         {
             throw new System.NotImplementedException();
         }
@@ -35,12 +38,13 @@ namespace BookManagement.Services
 
         public Book GetById(long id)
         {
-            throw new System.NotImplementedException();
+            Book book = _dbContext.Book.FirstOrDefault(x => x.Book_Id == id);
+            return book;
         }
 
-        public void Update(Book entity)
+        public int Update(Book entity)
         {
-            throw new System.NotImplementedException();
+            return _dbContext.SaveChanges();
         }
     }
 }

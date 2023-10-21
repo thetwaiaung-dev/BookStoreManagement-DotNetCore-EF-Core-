@@ -6,8 +6,8 @@ namespace BookManagement.Repositories
     {
         List<T> GetAll();
         T GetById(long id);
-        void Create(T entity);
-        void Update(T entity);
-        void Delete(T entity);
+        int Create(T entity);
+        int Update(T entity);
+        int Delete(T entity);
     }
 }

@@ -31,12 +31,7 @@ namespace BookManagement
                                                             (Configuration.GetConnectionString("con")));
             services.AddScoped<BookService>();
             services.AddScoped<CategoryService>();
-
-            //services.AddControllers()
-            //        .AddJsonOptions(op =>
-            //        {
-            //            op.JsonSerializerOptions
-            //        })
+            services.AddScoped<PageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

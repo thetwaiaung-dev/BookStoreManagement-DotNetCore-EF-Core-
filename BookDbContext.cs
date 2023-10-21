@@ -33,5 +33,7 @@ namespace BookManagement
 
         public DbSet<Book> Book { get; set; }
         public DbSet<BookCategory> Category { get; set; }
+        public DbSet<BookAuthor> Author { get; set; }
+        public DbSet<Page> Pages { get; set; }
     }
 }
