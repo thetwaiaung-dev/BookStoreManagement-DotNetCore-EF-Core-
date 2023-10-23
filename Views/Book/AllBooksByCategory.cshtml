@@ -1,6 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "All Books";
-    var books = ViewData["books"] as IEnumerable<Book>;
+    ViewData["Title"] = "Books";
+    IEnumerable<Book> books = ViewData["books"] as IEnumerable<Book>;
+    var category = ViewData["Category"] as BookCategory;
+    var categoryId = ViewData["CategoryId"];
 }
 @model IEnumerable<BookManagement.Models.BookCategory> ;
 
@@ -16,13 +18,15 @@
             </div>
             <div>
                 <ul class="list-group list-group-flush align-items-start">
-                    <li class="list-group-item p-0 active category-list w-100">
-                        <a class="nav-link text-dark category-btn" href="/book/category/books/0">All</a>
+                    <li class="@(
+                        categoryId.ToString() == "0" ? "list-group-item p-0 active category-list w-100" : "list-group-item p-0 category-list w-100" )">
+                        <a class="nav-link text-dark category-btn" href="/book/category/books/0" >All</a>
                     </li>
                     @foreach (var item in Model)
                     {
-                        <li class="list-group-item p-0 category-list w-100">
-                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)">@item.Category_Name</a>
+                        <li class="@(
+                        categoryId.Equals(item.Category_Id) ? "list-group-item p-0 active category-list w-100" : "list-group-item p-0 category-list w-100" )">
+                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)" >@item.Category_Name</a>
                         </li>
                     }
                 </ul>
@@ -40,14 +44,15 @@
         </div>
     </div>
     <div id="pagination">
-
     </div>
 </div>
 
-@section Scripts{
+@section Scripts {
     <script src="~/js/book/book.js" asp-append-version="true"></script>
     <script src="~/js/book/pagination.js" asp-append-version="true"></script>
     <script asp-append-version="true">
-        createPagination(0, 1, 9,'', 0, 0);
+        var categoryId = @categoryId;
+        createPagination(0, 1, 9,'', categoryId, 0);
     </script>
 }
+

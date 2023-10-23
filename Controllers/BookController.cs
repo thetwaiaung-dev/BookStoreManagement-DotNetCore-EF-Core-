@@ -3,6 +3,7 @@ using BookManagement.Models;
 using BookManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BookManagement.Controllers
 {
@@ -38,6 +39,21 @@ namespace BookManagement.Controllers
             var books = _bookService.GetAll();
             var categories = _categoryService.GetAll();
             ViewData["books"] = books;
+            return View(categories);
+        }
+
+        [HttpGet]
+        [Route("/book/category/books/{id}")]
+        public ActionResult AllBooksByCategory(long id)
+        {
+            var books = _bookService.GetAllBooks(null, 1, 9, id, 0);
+            var categories = _categoryService.GetAll();
+
+            var category = _categoryService.GetById(id);
+
+            ViewData["Category"] = category;
+            ViewData["CategoryId"] = id;
+            ViewData["books"] = books.books;
             return View(categories);
         }
 

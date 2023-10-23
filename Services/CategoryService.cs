@@ -26,7 +26,7 @@ namespace BookManagement.Services
 
         public BookCategory GetById(long id)
         {
-            throw new System.NotImplementedException();
+            return _dbContext.Category.FirstOrDefault(x=>x.Category_Id==id);
         }
 
         public void Update(BookCategory category)

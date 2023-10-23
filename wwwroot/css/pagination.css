@@ -1,0 +1,67 @@
+﻿/* CSS variables */
+:root {
+    --border-color: #3d315b;
+    --background-color: #266dd3;
+    --list-background-color: #444b6e;
+    --active-list-background-color: #9ab87a;
+    --border-radius: 5px;
+}
+
+/* Global styles */
+* {
+    font-family: "Poppins";
+}
+
+/*body {
+    background-color: var(--background-color);
+    margin: 0;
+}*/
+
+a:hover {
+    cursor: pointer;
+}
+
+#pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+    .custom-list li {
+        color: #fff;
+        display: flex;
+    }
+
+        .custom-list li a {
+            background-color: var(--list-background-color);
+            padding: 5px 10px;
+            border: 2px solid var(--border-color);
+            border-right: 0;
+        }
+
+        .custom-list li.active a {
+            background-color: var(--active-list-background-color);
+        }
+
+        .custom-list li:first-child a {
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        .custom-list li:last-child a {
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            border-right: 2px solid var(--border-color);
+        }
+
+        .category-list.active a {
+            background-color: var(--active-list-background-color);
+        }
+
+

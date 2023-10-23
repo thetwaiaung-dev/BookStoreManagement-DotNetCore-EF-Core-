@@ -14,10 +14,14 @@
             </div>
             <div>
                 <ul class="list-group list-group-flush align-items-start">
-                    @foreach(var item in Model)
+                    <li class="list-group-item p-0 active category-list w-100">
+                        <a class="nav-link text-dark category-btn" href="/book/category/books/0" >All</a>
+                    </li>
+                    @foreach (var item in Model)
                     {
-                        <li class="list-group-item p-0">
-                            <a class="nav-link text-dark" href="#item-1-1">@item.Category_Name</a></li>
+                        <li class="list-group-item p-0 category-list w-100">
+                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)" >@item.Category_Name</a>
+                        </li>
                     }
                 </ul>
             </div>
@@ -31,7 +35,7 @@
                     @foreach (var item in books.Take(3))
                     {
                         <div class="col-sm-4 p-0">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link h-100" href="#">
                                 <div class="card h-100">
                                     <div>
                                         <img src="~/photos/indexPhoto.jpg" class="w-100 h-100" />

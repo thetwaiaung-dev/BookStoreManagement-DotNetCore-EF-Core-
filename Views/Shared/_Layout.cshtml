@@ -6,16 +6,17 @@
     <title>@ViewData["Title"] - BookManagement</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/pagination.css" asp-append-version="true" />
 </head>
 <body>
     <header class="sticky-top h-25">
         <nav class="navbar navbar-expand-sm bg-dark justify-content-center ">
             <div class="container-fluid w-75">
-                <img src="~/photos/bookStoreIcon.jpg" style="width:70px;height:70px"/>
+                <img class="rounded-circle" src="~/photos/bookStoreIcon.jpg" style="width:70px;height:70px"/>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="row collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div class="d-flex row collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <div class="col">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -32,8 +33,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col justify-content-end">
-                        <div class="row justify-content-end">
+                    <div class=" col justify-content-end">
+                        <div class="d-flex row justify-content-end">
                             <button class="d-flex btn btn-outline-primary h-25 mr-2">Login</button>
                             <button class="d-flex btn btn-outline-success h-25 " type="submit">Sign In</button>
                         </div>
@@ -56,6 +57,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/book/domElement.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -1,12 +1,28 @@
 {
   "Files": [
     {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\pagination.css",
+      "PackagePath": "staticwebassets\\css\\pagination.css"
+    },
+    {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\book.js",
+      "PackagePath": "staticwebassets\\js\\book\\book.js"
+    },
+    {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\domElement.js",
+      "PackagePath": "staticwebassets\\js\\book\\domElement.js"
+    },
+    {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\pagination.js",
+      "PackagePath": "staticwebassets\\js\\book\\pagination.js"
     },
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\site.js",

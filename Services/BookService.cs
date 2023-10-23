@@ -1,6 +1,7 @@
 ﻿using BookManagement.Models;
 using BookManagement.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,6 +36,43 @@ namespace BookManagement.Services
                                         .OrderByDescending(x => x.Book_Id)
                                         .ToList();
             return books;
+        }
+
+        public BookResponseModel GetAllBooks(string searchValue,int pageNo,int pageSize,long categoryId,int authorId)
+        {
+            var books = from b in _dbContext.Book select b;
+
+            books = books.Include(x => x.Author)
+                            .Include(x => x.Category)
+                            .Include(x => x.Pages);
+
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                books=books.Where(x=>x.Book_Title.Contains(searchValue));
+            }
+
+            if(categoryId > 0)
+            {
+                books = books.Where(x => x.Category_Id == categoryId);
+            }
+
+            if(authorId > 0)
+            {
+                books=books.Where(x=>x.Author_Id == authorId);
+            }
+
+            books = books.OrderByDescending(x => x.Book_Id);
+            var items= books.Skip((pageNo-1)*pageSize).Take(pageSize).ToList();
+            int count = books.Count();
+            int totalPages=(int)Math.Ceiling(count/(double)pageSize);
+
+            BookResponseModel model = new BookResponseModel()
+            {
+                Book_Count = count,
+                TotalPages = totalPages,
+                books = items
+            };
+            return model;
         }
 
         public Book GetById(long id)
