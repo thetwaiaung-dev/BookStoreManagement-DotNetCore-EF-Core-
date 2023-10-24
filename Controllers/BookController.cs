@@ -38,7 +38,10 @@ namespace BookManagement.Controllers
         {
             var books = _bookService.GetAll();
             var categories = _categoryService.GetAll();
+            var authors = _authorService.GetAll();
+
             ViewData["books"] = books;
+            ViewData["authors"] = authors;
             return View(categories);
         }
 
@@ -48,12 +51,14 @@ namespace BookManagement.Controllers
         {
             var books = _bookService.GetAllBooks(null, 1, 9, id, 0);
             var categories = _categoryService.GetAll();
+            var authors=_authorService.GetAll();
 
             var category = _categoryService.GetById(id);
 
             ViewData["Category"] = category;
             ViewData["CategoryId"] = id;
             ViewData["books"] = books.books;
+            ViewData["authors"] = authors;
             return View(categories);
         }
 

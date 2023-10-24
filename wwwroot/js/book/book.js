@@ -68,16 +68,32 @@ async function createAllBook(searchValue, pageNo, pageRow, categoryId, authorId)
 /* search input box for all books */
 let timeoutId; // Declare a variable to store the timeout ID
 
-searchValue.addEventListener('input', () => {
-    // Clear the previous timeout if it exists
+if( searchValue != null) {
+    searchValue.addEventListener('input', () => {
+        // Clear the previous timeout if it exists
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+
+        // Set a new timeout of 2000 milliseconds (2 seconds)
+        timeoutId = setTimeout(() => {
+            createPagination(0, 1, 9, searchValue.value, 0, 0);
+        }, 1000);
+    });
+}
+
+function searchBookCategory(element, id) {
+
     if (timeoutId) {
         clearTimeout(timeoutId);
     }
 
     // Set a new timeout of 2000 milliseconds (2 seconds)
     timeoutId = setTimeout(() => {
-        createPagination(0, 1, 9, searchValue.value,0,0);
+        createPagination(0, 1, 9, element.value,id, 0);
     }, 1000);
-});
+
+}
+
 
 

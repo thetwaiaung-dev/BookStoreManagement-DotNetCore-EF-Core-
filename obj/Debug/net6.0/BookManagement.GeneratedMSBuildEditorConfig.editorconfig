@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\C#\BookStoreUsingC#EFCore\BookManagement
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/AllAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBbGxBdXRob3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/AllBooks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBbGxCb29rcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

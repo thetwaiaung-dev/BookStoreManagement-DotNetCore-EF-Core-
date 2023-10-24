@@ -1,6 +1,7 @@
 ﻿/* All Book View page */
 const allBook = document.getElementById("all-book");
 const searchValue = document.getElementById('search-value');
+const authorSelect = document.getElementById('author-select');
 
 /* category btn link */
 //function categoryBtn(element) {

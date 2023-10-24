@@ -1,7 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Books";
+    ViewData["Title"] = "All Authors";
     IEnumerable<Book> books = ViewData["books"] as IEnumerable<Book>;
-    IEnumerable<BookAuthor> authors = ViewData["authors"] as IEnumerable<BookAuthor>;
     var category = ViewData["Category"] as BookCategory;
     var categoryId = ViewData["CategoryId"];
 }
@@ -17,39 +16,26 @@
             <div>
                 <h3>Categories</h3>
             </div>
-            <div class="mb-5">
+            <div class="mb-3">
                 <ul class="list-group list-group-flush align-items-start">
                     <li class="@(
                         categoryId.ToString() == "0" ? "list-group-item p-0 active category-list w-100" : "list-group-item p-0 category-list w-100" )">
-                        <a class="nav-link text-dark category-btn" href="/book/category/books/0" >All</a>
+                        <a class="nav-link text-dark category-btn" href="/book/category/books/0">All</a>
                     </li>
                     @foreach (var item in Model)
                     {
                         <li class="@(
                         categoryId.Equals(item.Category_Id) ? "list-group-item p-0 active category-list w-100" : "list-group-item p-0 category-list w-100" )">
-                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)" >@item.Category_Name</a>
+                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)">@item.Category_Name</a>
                         </li>
                     }
                 </ul>
-            </div>
-            <div>
-                <h3>Authors</h3>
-                <div>
-                    <select class="btn border-dark form-select w-75" id="author-select" aria-label="Default select example">
-                        <option selected>Select...</option>
-                        <option value="0">All</option>
-                        @foreach (var author in authors)
-                        {
-                            <option value="@author.Author_Id">@author.Author_Name</option>
-                        }
-                    </select>
-                </div>
             </div>
         </div>
         <div class="col-sm-10">
             <div class="container mb-3">
                 <div id="all-book-title">
-                    <h3>All Books</h3>
+                    <h3>Authors</h3>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4 mb-1" id="all-book">
                     <!--all books  will be show here-->
@@ -66,14 +52,7 @@
     <script src="~/js/book/pagination.js" asp-append-version="true"></script>
     <script asp-append-version="true">
         var categoryId = @categoryId;
-        createPagination(0, 1, 9,'', categoryId, 0);
-
-        if (authorSelect != null) {
-            authorSelect.addEventListener('change', () => {
-                createPagination(0, 1, 9, '', categoryId, authorSelect.value);
-
-            })
-        }
+        createPagination(0, 1, 9, '', categoryId, 0);
     </script>
 }
 
