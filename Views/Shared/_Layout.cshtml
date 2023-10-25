@@ -36,8 +36,8 @@
                     </div>
                     <div class=" col justify-content-end">
                         <div class="d-flex row justify-content-end">
-                            <button class="d-flex btn btn-outline-primary h-25 mr-2">Login</button>
-                            <button class="d-flex btn btn-outline-success h-25 " type="submit">Sign In</button>
+                            <button class="col-md-2 d-flex btn btn-outline-primary h-25 mr-2">Login</button>
+                            <button class="col-md-2 d-flex btn btn-outline-success h-25 mr-2" type="submit">Sign In</button>
                                  @await Html.PartialAsync("_CulturePartial");
                         </div>
                     </div> 
@@ -60,6 +60,17 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/book/domElement.js" asp-append-version="true"></script>
+    <script asp-append-version="true" >
+            function changeLanguage(select,returnUrl) {
+                console.log('VAlue =>',select.value)
+                var selectedCulture = select.value;
+                if (selectedCulture !== '') {
+                    var returnUrl = returnUrl; // Use Razor syntax to get the returnUrl
+                    var url = '@Url.Action("SetLanguage", "Home")' + '?culture=' + selectedCulture + '&returnUrl=' + encodeURIComponent(returnUrl);
+                    window.location.href = url;
+                }
+            }
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

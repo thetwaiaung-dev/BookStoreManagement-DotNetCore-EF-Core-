@@ -12,17 +12,14 @@
                         .ToList();
 
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ?
-                    "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+                    "/" : $"{Context.Request.Path.Value}{Context.Request.QueryString}";
 }
 
-<div>
-    <select class="btn border-dark form-select w-75" aria-label="Default select example">
-        <option selected>Select...</option>
-        <option value="0">All</option>
-        @foreach (var culture in cultureItems)
-        {
-            <option><a class="m-3" href="@Url.Action("SetLanguage", "Home", new { culture = culture.Value, returnUrl = returnUrl })">@culture.Text</a></option>
-        }
-    </select>
-</div>
+<select class="col-md-3 btn bg-white border-dark form-select w-100" aria-label="Select Language" onchange="changeLanguage(this,'@returnUrl')">
+    <option selected>Language...</option>
+    @foreach (var culture in cultureItems)
+    {
+        <option value="@culture.Value">@(culture.Text.Contains("en-US") ? "English" : "Myanmar" )</option>
+    }
+</select>
 
