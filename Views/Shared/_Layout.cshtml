@@ -21,16 +21,16 @@
                     <div class="col">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" asp-controller="book" asp-action="index">HOME</a>
+                                <a class="nav-link active text-white" aria-current="page" asp-controller="book" asp-action="index">@SharedLocalizer[ResourceCode.Home]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">BOOKS</a>
+                                <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.AllBooks]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">CATEGORIES</a>
+                                <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.Category]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">AUTHORS</a>
+                                <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.Authors]</a>
                             </li>
                         </ul>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="d-flex row justify-content-end">
                             <button class="d-flex btn btn-outline-primary h-25 mr-2">Login</button>
                             <button class="d-flex btn btn-outline-success h-25 " type="submit">Sign In</button>
-                                @await Html.PartialAsync("_CulturePartial");
+                                 @await Html.PartialAsync("_CulturePartial");
                         </div>
                     </div> 
                 </div>

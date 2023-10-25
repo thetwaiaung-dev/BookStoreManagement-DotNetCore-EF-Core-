@@ -4,7 +4,6 @@
 
 @inject IOptions<RequestLocalizationOptions> LocalizationOptions
 
-
 @{
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 
@@ -16,11 +15,14 @@
                     "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
 }
 
-
 <div>
-    @foreach(var culture in cultureItems)
-    {
-        <a class="m-3" href="@Url.Action("SetLanguage", "Home", new { culture = requestCulture.RequestCulture.UICulture.Name , returnUrl = returnUrl })">@requestCulture.RequestCulture.UICulture.Name</a>
-    }
+    <select class="btn border-dark form-select w-75" aria-label="Default select example">
+        <option selected>Select...</option>
+        <option value="0">All</option>
+        @foreach (var culture in cultureItems)
+        {
+            <option><a class="m-3" href="@Url.Action("SetLanguage", "Home", new { culture = culture.Value, returnUrl = returnUrl })">@culture.Text</a></option>
+        }
+    </select>
 </div>
 

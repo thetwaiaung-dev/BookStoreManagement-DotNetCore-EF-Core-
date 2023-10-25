@@ -118,6 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="B001" xml:space="preserve">
-    <value>စာအုပ်များ</value>
+    <value>HOME</value>
+  </data>
+  <data name="B002" xml:space="preserve">
+    <value>BOOKS</value>
+  </data>
+  <data name="B003" xml:space="preserve">
+    <value>AUTHORS</value>
+  </data>
+  <data name="B004" xml:space="preserve">
+    <value>CATEGORY</value>
+  </data>
+  <data name="B005" xml:space="preserve">
+    <value>Novel</value>
+  </data>
+  <data name="B006" xml:space="preserve">
+    <value>Business</value>
   </data>
 </root>

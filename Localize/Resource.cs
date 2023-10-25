@@ -4,20 +4,21 @@ namespace BookManagement.Localize
 {
     public class Resource
     {
+        
     }
 
    public static class ResourceExtension
     {
-        public static IStringLocalizer<Resource> Localizer { get; set; }
+        public static IStringLocalizer<Resource> _localizer { get; set; }
        
         public static void Configure(IStringLocalizer<Resource> localizer)
         {
-            Localizer = localizer;
+            _localizer = localizer;
         }
 
         public static string GetResource(this string str)
         {
-            return Localizer?[str];
+            return _localizer?[str];
         }
     }
 }

@@ -384,9 +384,10 @@ D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.pdb
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.genruntimeconfig.cache
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\ref\BookManagement.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.csproj.GenerateResource.cache
-D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.Resources.Resource.en-AU.resources
-D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\en-AU\BookManagement.resources.dll
-D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\en-AU\BookManagement.resources.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\en-US\BookManagement.resources.dll
-D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.Resources.Resource.en-US.resources
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\en-US\BookManagement.resources.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.Resources.Controllers.BookController.en-US.resources
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\en-AU\BookManagement.resources.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.Resources.SharedResource.en-AU.resources
+D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\en-AU\BookManagement.resources.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.Resources.SharedResource.en-US.resources

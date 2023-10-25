@@ -1,4 +1,4 @@
-﻿@using BookManagement.Resources
+﻿
 @{
     ViewData["Title"] = "All Books";
     var books = ViewData["books"] as IEnumerable<Book>;
@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <div>
-                <h3>Authors</h3>
+                <h3>@SharedLocalizer[ResourceCode.Authors]</h3>
                 <div>
                     <select class="btn border-dark form-select w-75" id="author-select" aria-label="Default select example">
                         <option selected>Select...</option>
@@ -46,7 +46,7 @@
         <div class="col-sm-10">
             <div class="container mb-3">
                 <div id="all-book-title">
-                    <h3>@_localizer[ResourceCode.AllBooks.GetResource()]</h3>
+                    <h3>@SharedLocalizer[ResourceCode.AllBooks]</h3>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4 mb-1" id="all-book">
                     <!--all books  will be show here-->

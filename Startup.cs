@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,14 +33,16 @@ namespace BookManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLocalization(option => option.ResourcesPath = "Resources");
-            services.AddLocalization();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
 
-            const string defaultCulture = "en-AU";
+            const string defaultCulture = "en-US";
 
             var supportedCultures = new[]
             {
-                new CultureInfo("en-US"),
+                new CultureInfo(defaultCulture),
                 new CultureInfo("en-AU"),
             };
 
@@ -52,6 +55,8 @@ namespace BookManagement
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
+            services.AddTransient<ISharedViewLocalizer, SharedViewLocalizer>();
 
             services.AddControllersWithViews();
 
@@ -78,9 +83,14 @@ namespace BookManagement
             }
 
             /* Localization */
-            app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
-            ResourceExtension.Configure(app.ApplicationServices.GetRequiredService<IStringLocalizer<Resource>>());
 
+            RequestLocalizationOptions options = (app.ApplicationServices.GetRequiredService
+               <IOptions<RequestLocalizationOptions>>().Value);
+
+            //RequestLocalizationOptions options = (app.ApplicationServices.GetRequiredService
+            //   <IOptions<RequestLocalizationOptions>>().Value);
+
+            app.UseRequestLocalization(options);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
