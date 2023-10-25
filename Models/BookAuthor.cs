@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Microsoft.AspNetCore.Http;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,6 +13,7 @@ namespace BookManagement.Models
         [Key]
         public  int Author_Id { get; set; }
         public string Author_Name { get; set; }
+        //public string Author_Photo {  get; set; }
 
         [JsonIgnore]
         public ICollection<Book> Books{ get; set; }=new List<Book>();

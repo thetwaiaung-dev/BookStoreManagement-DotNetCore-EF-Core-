@@ -82,7 +82,8 @@ namespace BookManagement.Models
             return new AuthorDto()
             {
                 Author_Id = model.Author_Id,
-                Author_Name = model.Author_Name
+                Author_Name = model.Author_Name,
+                //Author_Photo = model.Author_Photo,
             };
         }
     }

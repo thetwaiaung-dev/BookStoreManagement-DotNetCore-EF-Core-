@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+
+@inject IOptions<RequestLocalizationOptions> LocalizationOptions
+
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+
+    var cultureItems = LocalizationOptions.Value.SupportedCultures
+                        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
+                        .ToList();
+
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ?
+                    "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+}
+
+
+<div>
+    @foreach(var culture in cultureItems)
+    {
+        <a class="m-3" href="@Url.Action("SetLanguage", "Home", new { culture = requestCulture.RequestCulture.UICulture.Name , returnUrl = returnUrl })">@requestCulture.RequestCulture.UICulture.Name</a>
+    }
+</div>
+

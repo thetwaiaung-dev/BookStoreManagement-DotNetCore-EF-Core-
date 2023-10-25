@@ -1,9 +1,12 @@
 ﻿using BookManagement.Dtos;
 using BookManagement.Models;
+using BookManagement.Resources;
 using BookManagement.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 
 namespace BookManagement.Controllers
 {
@@ -13,20 +16,25 @@ namespace BookManagement.Controllers
         private readonly CategoryService _categoryService;
         private readonly PageService _pageService;
         private readonly AuthorService _authorService;
+        private readonly IStringLocalizer<BookController> _stringLocalizer;
+
 
         public BookController(BookService bookService,
                               CategoryService categoryService,
-                              PageService pageService,AuthorService authorService)
+                              PageService pageService,AuthorService authorService,
+                              IStringLocalizer<BookController> stringLocalizer)
         {
             _bookService = bookService;
-            _categoryService=categoryService;
-            _pageService=pageService;
+            _categoryService = categoryService;
+            _pageService = pageService;
             _authorService = authorService;
+            _stringLocalizer = stringLocalizer;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
+            string message = _stringLocalizer["B001"];
             var books = _bookService.GetAll();
             var categories=_categoryService.GetAll();
             ViewData["books"]=books;

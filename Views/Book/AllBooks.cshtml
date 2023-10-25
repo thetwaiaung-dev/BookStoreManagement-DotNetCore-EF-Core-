@@ -1,4 +1,5 @@
-﻿@{
+﻿@using BookManagement.Resources
+@{
     ViewData["Title"] = "All Books";
     var books = ViewData["books"] as IEnumerable<Book>;
     var authors = ViewData["authors"] as IEnumerable<BookAuthor>;
@@ -45,7 +46,7 @@
         <div class="col-sm-10">
             <div class="container mb-3">
                 <div id="all-book-title">
-                    <h3>All Books</h3>
+                    <h3>@_localizer[ResourceCode.AllBooks.GetResource()]</h3>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4 mb-1" id="all-book">
                     <!--all books  will be show here-->

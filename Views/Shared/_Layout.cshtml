@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,6 +38,7 @@
                         <div class="d-flex row justify-content-end">
                             <button class="d-flex btn btn-outline-primary h-25 mr-2">Login</button>
                             <button class="d-flex btn btn-outline-success h-25 " type="submit">Sign In</button>
+                                @await Html.PartialAsync("_CulturePartial");
                         </div>
                     </div> 
                 </div>
