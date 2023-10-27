@@ -334,6 +334,9 @@
         "resources": {
           "en-US/BookManagement.resources.dll": {
             "locale": "en-US"
+          },
+          "en-AU/BookManagement.resources.dll": {
+            "locale": "en-AU"
           }
         },
         "compile": {

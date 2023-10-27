@@ -1,25 +1,6 @@
-﻿@using Microsoft.AspNetCore.Builder
-@using Microsoft.AspNetCore.Localization
-@using Microsoft.Extensions.Options
+﻿
+<button class="btn col-md-2 bg-white border-dark"><a class="nav-link text-dark p-0" href="@Url.Action("SetLanguage", "Home", new { culture = "en-US", returnUrl = Context.Request.Path })">English</a></button>
 
-@inject IOptions<RequestLocalizationOptions> LocalizationOptions
+<button class=" btn col-md-2 bg-white border-dark mr-5"><a class="nav-link text-dark p-0" href="@Url.Action("SetLanguage", "Home", new { culture = "en-AU", returnUrl = Context.Request.Path })">Myanmar</a></button>
 
-@{
-    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-
-    var cultureItems = LocalizationOptions.Value.SupportedCultures
-                        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
-                        .ToList();
-
-    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ?
-                    "/" : $"{Context.Request.Path.Value}{Context.Request.QueryString}";
-}
-
-<select class="col-md-3 btn bg-white border-dark form-select w-100" aria-label="Select Language" onchange="changeLanguage(this,'@returnUrl')">
-    <option selected>Language...</option>
-    @foreach (var culture in cultureItems)
-    {
-        <option value="@culture.Value">@(culture.Text.Contains("en-US") ? "English" : "Myanmar" )</option>
-    }
-</select>
 

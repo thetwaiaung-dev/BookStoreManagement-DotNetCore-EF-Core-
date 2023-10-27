@@ -1,4 +1,5 @@
 ﻿using BookManagement.Localize;
+using BookManagement.Middleware;
 using BookManagement.Repositories;
 using BookManagement.Services;
 using Microsoft.AspNetCore.Builder;
@@ -83,14 +84,12 @@ namespace BookManagement
             }
 
             /* Localization */
-
             RequestLocalizationOptions options = (app.ApplicationServices.GetRequiredService
                <IOptions<RequestLocalizationOptions>>().Value);
-
-            //RequestLocalizationOptions options = (app.ApplicationServices.GetRequiredService
-            //   <IOptions<RequestLocalizationOptions>>().Value);
-
             app.UseRequestLocalization(options);
+
+            /* Error Handling */
+            app.UseErrorHandlingMiddleware();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

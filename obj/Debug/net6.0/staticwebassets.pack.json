@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\errorPage.css",
+      "PackagePath": "staticwebassets\\css\\errorPage.css"
+    },
+    {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\pagination.css",
       "PackagePath": "staticwebassets\\css\\pagination.css"
     },
@@ -11,6 +15,10 @@
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\author.js",
+      "PackagePath": "staticwebassets\\js\\book\\author.js"
     },
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\book.js",
@@ -167,6 +175,10 @@
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\photos\\coverBookPhoto.jpg",
       "PackagePath": "staticwebassets\\photos\\coverBookPhoto.jpg"
+    },
+    {
+      "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\photos\\emoji.png",
+      "PackagePath": "staticwebassets\\photos\\emoji.png"
     },
     {
       "Id": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\photos\\indexPhoto.jpg",

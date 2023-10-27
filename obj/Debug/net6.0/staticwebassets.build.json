@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "32JmkcfMjU5O1Iu8z4hrTHY5+RG6kwxWdavjfBzhTec=",
+  "Hash": "QUcO4Fz4gvddLTFRQmkEMxAEjorKJfKt9g2/v5vvZ58=",
   "Source": "BookManagement",
   "BasePath": "_content/BookManagement",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\errorPage.css",
+      "SourceId": "BookManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\",
+      "BasePath": "_content/BookManagement",
+      "RelativePath": "css/errorPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\errorPage.css"
+    },
     {
       "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\css\\pagination.css",
       "SourceId": "BookManagement",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\author.js",
+      "SourceId": "BookManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\",
+      "BasePath": "_content/BookManagement",
+      "RelativePath": "js/book/author.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\book\\author.js"
     },
     {
       "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\js\\book\\book.js",
@@ -813,6 +851,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\coverBookPhoto.jpg"
+    },
+    {
+      "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\photos\\emoji.png",
+      "SourceId": "BookManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\",
+      "BasePath": "_content/BookManagement",
+      "RelativePath": "photos/emoji.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\emoji.png"
     },
     {
       "Identity": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\wwwroot\\photos\\indexPhoto.jpg",
