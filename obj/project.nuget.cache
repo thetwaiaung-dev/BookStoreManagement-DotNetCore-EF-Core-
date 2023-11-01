@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6rmE7FkzUQpt0CQvmana0IbxMeSsjOTUPNycEoErdUBPr6k/DAuhUmiT4BQ/YIMVeWZcnAJ4Q+T6eo3a4tuzog==",
+  "dgSpecHash": "tyyGRmD6Preny4kB3msLw6NeYGBQACFLCafC12fdM6h5di9FvvIIkDuJs2wHajuggsLmvnKZxutZ+p+mBkGGbw==",
   "success": true,
   "projectFilePath": "D:\\C#\\BookStoreUsingC#EFCore\\BookManagement\\BookManagement.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,8 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

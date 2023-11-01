@@ -391,3 +391,5 @@ D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\refint\BookManageme
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.pdb
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.genruntimeconfig.cache
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\ref\BookManagement.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\Serilog.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\Serilog.Sinks.File.dll

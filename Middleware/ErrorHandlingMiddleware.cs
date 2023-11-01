@@ -1,4 +1,5 @@
-﻿using BookManagement.Models;
+﻿using BookManagement.Helper;
+using BookManagement.Models;
 using BookManagement.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,11 +14,15 @@ namespace BookManagement.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly LogService _logService;
+        private readonly LogHelper _logHelper;
 
-        public ErrorHandlingMiddleware(RequestDelegate next, LogService logService)
+        public ErrorHandlingMiddleware(RequestDelegate next,
+                                       LogService logService,
+                                       LogHelper logHelper)
         {
             _next = next;
             _logService = logService;
+            _logHelper = logHelper;
         }
 
         public async Task Invoke(HttpContext context)
@@ -41,6 +46,12 @@ namespace BookManagement.Middleware
                 //}
                 #endregion
 
+                #region text file log
+
+                //_logHelper.Info($"Status Code : {context.Response.StatusCode} ,Url :{context.Request.Path}");
+
+                #endregion
+
                 #region Go Direct to view
                 //if (context.Response.StatusCode == 404 && !context.Response.HasStarted)
                 //{
@@ -58,7 +69,7 @@ namespace BookManagement.Middleware
                 {
                     var currentUrl = context.Request.Path.Value;
                     var redirectUrl = $"/Home/NotFound?Page={currentUrl}";
-                   // context.Response.HttpContext.Session.SetString("NotFoundMessage", currentUrl);
+                    context.Response.HttpContext.Session.SetString("NotFoundMessage", currentUrl);
                     context.Response.Redirect(redirectUrl);
                 }
                 #endregion
@@ -78,6 +89,12 @@ namespace BookManagement.Middleware
                 //    var url = $"/Home/InternalServer?Page={context.Request.Path.Value}";
                 //    context.Response.Redirect(url);
                 //}
+                #endregion
+
+                #region text file log
+
+                _logHelper.Info($"Status Code : 500 ,Url :{context.Request.Path}");
+
                 #endregion
 
                 #region Go Direct to View

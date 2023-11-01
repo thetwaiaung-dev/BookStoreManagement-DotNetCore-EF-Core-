@@ -1,0 +1,14 @@
+2023-11-01 15:59:02.147 +06:30 [INF] Status Code : 500 ,Url :/Book/AllBooks
+2023-11-01 16:00:43.732 +06:30 [INF] Status Code : 500 ,Url :/Book/AllBooks
+2023-11-01 16:03:02.027 +06:30 [INF] Status Code : 200 ,Url :/
+2023-11-01 16:03:27.718 +06:30 [INF] Status Code : 404 ,Url :/dfd
+2023-11-01 16:03:34.094 +06:30 [INF] Status Code : 200 ,Url :/Home/NotFound
+2023-11-01 16:23:34.819 +06:30 [DBG] Status Code : 200 ,Url :/
+2023-11-01 16:23:44.201 +06:30 [DBG] Status Code : 200 ,Url :/Home/InternalServer
+2023-11-01 16:23:46.958 +06:30 [DBG] Status Code : 200 ,Url :/book/AllAuthor
+2023-11-01 16:23:47.348 +06:30 [DBG] Status Code : 200 ,Url :/api/bookApi/get-all-authors
+2023-11-01 16:23:49.991 +06:30 [DBG] Status Code : 404 ,Url :/bosok/AllAuthor
+2023-11-01 16:23:50.379 +06:30 [DBG] Status Code : 200 ,Url :/Home/NotFound
+2023-11-01 16:27:20.737 +06:30 [INF] Status Code : 200 ,Url :/
+2023-11-01 16:27:37.847 +06:30 [INF] Status Code : 404 ,Url :/dfd
+2023-11-01 16:27:38.304 +06:30 [INF] Status Code : 200 ,Url :/Home/NotFound

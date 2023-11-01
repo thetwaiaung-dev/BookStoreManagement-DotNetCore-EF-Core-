@@ -1,4 +1,5 @@
-﻿using BookManagement.Localize;
+﻿using BookManagement.Helper;
+using BookManagement.Localize;
 using BookManagement.Middleware;
 using BookManagement.Repositories;
 using BookManagement.Services;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -79,11 +81,19 @@ namespace BookManagement
             services.AddTransient<PageService>();
             services.AddTransient<AuthorService>();
             services.AddTransient<LogService>();
+            services.AddTransient<LogHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSession();
+
+            Log.Logger = new LoggerConfiguration()
+                             .MinimumLevel.Information()
+                             .WriteTo.File("logs/bookLog.txt", rollingInterval: RollingInterval.Hour)
+                             .CreateLogger();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -109,8 +119,6 @@ namespace BookManagement
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

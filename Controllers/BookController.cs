@@ -49,6 +49,7 @@ namespace BookManagement.Controllers
             var books = _bookService.GetAll();
             var categories = _categoryService.GetAll();
             var authors = _authorService.GetAll();
+            throw new Exception("message");
 
             ViewData["books"] = books;
             ViewData["authors"] = authors;

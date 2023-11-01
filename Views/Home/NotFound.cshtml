@@ -1,10 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Page Not Found";
-    // var data = Context.Response.HttpContext.Session.GetString("NotFoundMessage");
-    // if (data != null)
-    // {
-    //     Context.Response.HttpContext.Session.Remove("NotFoundMessage");
-    // }
+    var data = Context.Response.HttpContext.Session.GetString("NotFoundMessage");
+    if (data != null)
+    {
+        Context.Response.HttpContext.Session.Remove("NotFoundMessage");
+    }
 }
 
 <div id="notfound">

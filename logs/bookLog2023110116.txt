@@ -1,0 +1,2 @@
+2023-11-01 16:34:33.401 +06:30 [INF] Status Code : 500 ,Url :/Book/AllBooks
+2023-11-01 16:43:51.842 +06:30 [INF] Status Code : 500 ,Url :/Book/AllBooks
