@@ -19,7 +19,7 @@ namespace BookManagement.Services
         public int Create(Book entity)
         {
             _dbContext.Book.Add(entity);
-            int result =_dbContext.SaveChanges();
+            int result = _dbContext.SaveChanges();
             return result;
         }
 
@@ -30,15 +30,16 @@ namespace BookManagement.Services
 
         public List<Book> GetAll()
         {
-            var books = _dbContext.Book.Include(x=>x.Author)
-                                        .Include(x=>x.Category)
-                                        .Include(x=>x.Pages)
-                                        .OrderByDescending(x => x.Book_Id)
-                                        .ToList();
+            var books = _dbContext.Book.AsNoTracking()
+                .Include(x => x.Author)
+                .Include(x => x.Category)
+                .Include(x => x.Pages)
+                .OrderByDescending(x => x.Book_Id)
+                .ToList();
             return books;
         }
 
-        public BookResponseModel GetAllBooks(string searchValue,int pageNo,int pageSize,long categoryId,int authorId)
+        public BookResponseModel GetAllBooks(string searchValue, int pageNo, int pageSize, long categoryId, int authorId)
         {
             var books = from b in _dbContext.Book select b;
 
@@ -48,23 +49,26 @@ namespace BookManagement.Services
 
             if (!string.IsNullOrEmpty(searchValue))
             {
-                books=books.Where(x=>x.Book_Title.Contains(searchValue));
+                books = books.Where(x => x.Book_Title.Contains(searchValue));
             }
 
-            if(categoryId > 0)
+            if (categoryId > 0)
             {
                 books = books.Where(x => x.Category_Id == categoryId);
             }
 
-            if(authorId > 0)
+            if (authorId > 0)
             {
-                books=books.Where(x=>x.Author_Id == authorId);
+                books = books.Where(x => x.Author_Id == authorId);
             }
 
             books = books.OrderByDescending(x => x.Book_Id);
-            var items= books.Skip((pageNo-1)*pageSize).Take(pageSize).ToList();
+            var items = books.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList();
             int count = books.Count();
-            int totalPages=(int)Math.Ceiling(count/(double)pageSize);
+            int totalPages = (int)Math.Ceiling(count / (double)pageSize);
+
+            /* other hand for total pages */
+            //int totalPages = (count + pageSize - 1) / pageSize;
 
             BookResponseModel model = new BookResponseModel()
             {

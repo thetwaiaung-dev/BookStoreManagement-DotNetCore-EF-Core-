@@ -25,13 +25,13 @@
                                 <a class="nav-link active text-white" aria-current="page" asp-controller="book" asp-action="index">@SharedLocalizer[ResourceCode.Home]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.AllBooks]</a>
+                                <a class="nav-link active text-white" aria-current="page"asp-controller="book" asp-action="AllBooks">@SharedLocalizer[ResourceCode.AllBooks]</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.Category]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">@SharedLocalizer[ResourceCode.Authors]</a>
+                                <a class="nav-link active text-white" aria-current="page" asp-controller="book" asp-action="AllAuthor">@SharedLocalizer[ResourceCode.Authors]</a>
                             </li>
                         </ul>
                     </div>

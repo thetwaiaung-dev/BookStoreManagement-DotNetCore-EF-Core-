@@ -34,6 +34,15 @@ namespace BookManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromHours(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
@@ -62,11 +71,14 @@ namespace BookManagement
             services.AddControllersWithViews();
 
             services.AddDbContext<BookDbContext>(opt => opt.UseSqlServer
-                                                            (Configuration.GetConnectionString("con")));
-            services.AddScoped<BookService>();
-            services.AddScoped<CategoryService>();
-            services.AddScoped<PageService>();
-            services.AddScoped<AuthorService>();
+                                                            (Configuration.GetConnectionString("con")),
+                                                            ServiceLifetime.Transient,
+                                                            ServiceLifetime.Transient);
+            services.AddTransient<BookService>();
+            services.AddTransient<CategoryService>();
+            services.AddTransient<PageService>();
+            services.AddTransient<AuthorService>();
+            services.AddTransient<LogService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,6 +109,8 @@ namespace BookManagement
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

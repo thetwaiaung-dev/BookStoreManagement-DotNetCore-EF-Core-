@@ -1,5 +1,6 @@
 ﻿using BookManagement.Models;
 using BookManagement.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,7 +21,7 @@ namespace BookManagement.Services
 
         public List<BookCategory> GetAll()
         {
-            var categories = _dbContext.Category.ToList();
+            var categories = _dbContext.Category.AsNoTracking().ToList();
             return categories;
         }
 

@@ -45,7 +45,7 @@ async function getAllBook(searchValue, pageNo, pageSize, categoryId, authorId) {
         body: JSON.stringify(data)
     };
 
-    const response = await fetch('/api/BookApi', settings);
+    const response = await fetch('/api/bookApi/get-all-books', settings);
     if (!response.ok) {
         const errorMessage = `An error occur :${response.status}`;
         throw new Error(errorMessage);
@@ -75,7 +75,6 @@ if( searchValue != null) {
             clearTimeout(timeoutId);
         }
 
-        // Set a new timeout of 2000 milliseconds (2 seconds)
         timeoutId = setTimeout(() => {
             createPagination(0, 1, 9, searchValue.value, 0, 0);
         }, 1000);

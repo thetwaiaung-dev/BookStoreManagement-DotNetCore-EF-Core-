@@ -14,7 +14,7 @@ namespace BookManagement.Models
         public string Category_Name { get; set; }
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date)]   
         public DateTime ModifiedDate { get; set; }
 
         [JsonIgnore]
