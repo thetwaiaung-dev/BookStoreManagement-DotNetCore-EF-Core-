@@ -10,6 +10,9 @@ using System.Resources;
 using System;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using BookManagement.Encrypt;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookManagement.Controllers
 {
@@ -35,8 +38,21 @@ namespace BookManagement.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            #region Encryption and Decryption
+            //var encryptionService = new StringEncryptionService();
+            //const string passPhrase = "Sup3rS3curePass!";
+
+            //var encrypted = await encryptionService.EncryptAsync("Encryption and Decryption in Book Sotre management ", passPhrase);
+
+            //Console.WriteLine($"Encrypted Data =>>> {encrypted}");
+
+            //var decrypted = await encryptionService.DecryptAsync(encrypted, passPhrase);
+
+            //Console.WriteLine($"Decrypted Data =>>> {decrypted}");
+            #endregion
+
             var books = _bookService.GetAll();
             var categories = _categoryService.GetAll();
             ViewData["books"] = books;
@@ -49,7 +65,6 @@ namespace BookManagement.Controllers
             var books = _bookService.GetAll();
             var categories = _categoryService.GetAll();
             var authors = _authorService.GetAll();
-            throw new Exception("message");
 
             ViewData["books"] = books;
             ViewData["authors"] = authors;
@@ -175,7 +190,7 @@ namespace BookManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateAuthor([FromBody] AuthorDto dto)
+        public IActionResult CreateAuthor([FromBody] AuthorPortalRequestDto dto)
         {
             if (dto == null)
             {
@@ -183,7 +198,7 @@ namespace BookManagement.Controllers
             }
 
             string folder = "photo/author/";
-            folder += Guid.NewGuid().ToString() + "_" + dto.Author_PhotoUrl.FileName;
+            folder += Guid.NewGuid().ToString() + "_" + dto.AuthorPhoto.FileName;
 
             string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
 
@@ -193,7 +208,7 @@ namespace BookManagement.Controllers
 
             if (result > 0)
             {
-                dto.Author_PhotoUrl.CopyTo(new FileStream(serverFolder, FileMode.Create));
+                dto.AuthorPhoto.CopyTo(new FileStream(serverFolder, FileMode.Create));
             }
 
             string message = result > 0 ? "Success" : "Failed";
@@ -201,7 +216,7 @@ namespace BookManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateAuthor([FromBody] AuthorDto dto)
+        public IActionResult UpdateAuthor([FromBody] AuthorPortalRequestDto dto)
         {
             if (dto == null)
             {
@@ -215,10 +230,10 @@ namespace BookManagement.Controllers
             }
 
             string serverFolder = null;
-            if (model.Author_Photo != dto.Author_PhotoUrl.FileName)
+            if (model.Author_Photo != dto.AuthorPhoto.FileName)
             {
                 string folder = "photo/author/";
-                folder += Guid.NewGuid().ToString() + "_" + dto.Author_PhotoUrl.FileName;
+                folder += Guid.NewGuid().ToString() + "_" + dto.AuthorPhoto.FileName;
                 serverFolder = Path.Combine(_webHostEnvironment.WebRootPath + folder);
 
                 model.Author_Photo = "/" + folder;
@@ -227,9 +242,9 @@ namespace BookManagement.Controllers
             model.Author_Name = dto.Author_Name;
 
             int result = _authorService.Update(model);
-            if (result > 0 && model.Author_Photo != dto.Author_PhotoUrl.FileName)
+            if (result > 0 && model.Author_Photo != dto.AuthorPhoto.FileName)
             {
-                dto.Author_PhotoUrl.CopyTo(new FileStream(serverFolder, FileMode.Create));
+                dto.AuthorPhoto.CopyTo(new FileStream(serverFolder, FileMode.Create));
             }
 
             string message = result > 0 ? "Success" : "Failed";

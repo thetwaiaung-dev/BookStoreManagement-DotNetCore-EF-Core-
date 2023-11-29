@@ -1,4 +1,5 @@
 ﻿using BookManagement.Dtos;
+using Microsoft.JSInterop.Infrastructure;
 
 namespace BookManagement.Models
 {
@@ -6,7 +7,7 @@ namespace BookManagement.Models
     {
         public static Book Change(this BookDto dto)
         {
-            if (dto == null)  return null;
+            if (dto == null) return null;
 
             return new Book()
             {
@@ -64,7 +65,7 @@ namespace BookManagement.Models
             };
         }
 
-        public static BookAuthor Change(this AuthorDto dto)
+        public static BookAuthor Change(this AuthorPortalRequestDto dto)
         {
             if (dto == null) return null;
 
@@ -72,19 +73,65 @@ namespace BookManagement.Models
             {
                 Author_Id = dto.Author_Id,
                 Author_Name = dto.Author_Name,
-                Author_Photo=dto.Author_Photo,
+                Author_Photo = dto.Author_Photo,
             };
         }
 
-        public static AuthorDto Change(this BookAuthor model)
+        public static AuthorPortalRequestDto Change(this BookAuthor model)
         {
             if (model == null) return null;
 
-            return new AuthorDto()
+            return new AuthorPortalRequestDto()
             {
                 Author_Id = model.Author_Id,
                 Author_Name = model.Author_Name,
                 Author_Photo = model.Author_Photo,
+            };
+        }
+
+        public static AuthorPortalRequestDto Change(this AuthorRequestDtos dto)
+        {
+            if (dto == null) return null;
+            return new AuthorPortalRequestDto()
+            {
+                Author_Id = dto.Id,
+                Author_Name = dto.AuthorName,
+                Author_Photo = dto.AuthorPhoto,
+            };
+        }
+
+        public static AuthorRequestDtos ChangeDto(this AuthorPortalRequestDto dto)
+        {
+            if (dto == null) return null;
+            return new AuthorRequestDtos
+            {
+                Id = dto.Author_Id,
+                AuthorName = dto.Author_Name,
+                AuthorPhoto = dto.Author_Photo,
+            };
+        }
+
+        public static BookCategory Change(this BookCategoryDto dto)
+        {
+            if (dto == null) return null;
+            return new BookCategory()
+            {
+                Category_Id = dto.Category_Id,
+                Category_Name = dto.Category_Name,
+                CreatedDate = dto.CreatedDate,
+                ModifiedDate = dto.ModifiedDate,
+            };
+        }
+
+        public static BookCategoryDto Change(this BookCategory model)
+        {
+            if (model == null) return null;
+            return new BookCategoryDto()
+            {
+                Category_Id = model.Category_Id,
+                Category_Name = model.Category_Name,
+                CreatedDate = model.CreatedDate,
+                ModifiedDate = model.ModifiedDate,
             };
         }
     }

@@ -73,15 +73,15 @@ function createPaginationForAuthors(pages, page, pageSize, searchValue, category
     }).catch(error => console.log("createAllAuthor function error : " + error))
 }
 
-function createAuthor(photo, authorName) {
+function createAuthor(photo, authorName,authorPhoto) {
     var author = document.createElement('div');
     author.className = "col-sm-4 p-0";
     author.innerHTML = `<a class="nav-link h-100" href="#">
                                     <div class="card h-100">
                                         <div>
-                                            <img src="/photos/indexPhoto.jpg" class="w-100 h-100" />
+                                            <img src="${authorPhoto}" style="width:275px;height:250px" />
                                         </div>
-                                        <div class="card-footer ">
+                                        <div class="card-footer w-100 h-25">
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <small class="d-flex text-muted">Author</small>
@@ -127,7 +127,7 @@ async function createAllAuthor(searchValue, pageNo, pageRow, categoryId) {
     allAuthor.innerHTML = '';
 
     for await (const author of authorList.authors) {
-        createAuthor('',author.author_Name)
+        createAuthor('',author.author_Name,author.author_Photo)
     }
     return authorList.totalPages;
 }

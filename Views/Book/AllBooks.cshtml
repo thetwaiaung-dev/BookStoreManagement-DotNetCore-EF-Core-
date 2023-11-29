@@ -1,10 +1,13 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "All Books";
     var books = ViewData["books"] as IEnumerable<Book>;
     var authors = ViewData["authors"] as IEnumerable<BookAuthor>;
 }
 @model IEnumerable<BookManagement.Models.BookCategory> ;
+
+@section CSS{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-3.2.6.min.css" integrity="sha256-quZ4+TPWUyQzuPnahKf6d8Xal6tZcYZTzSt4wFVEFn8=" crossorigin="anonymous">
+}
 
 <div class="container justify-content-end d-flex pr-sm-5 mt-5">
     <input type="search" id="search-value" class="form-control col-sm-4" placeholder="Search..." />
@@ -35,7 +38,7 @@
                     <select class="btn border-dark form-select w-75" id="author-select" aria-label="Default select example">
                         <option selected>Select...</option>
                         <option value="0">All</option>
-                        @foreach(var author in authors)
+                        @foreach (var author in authors)
                         {
                             <option value="@author.Author_Id">@author.Author_Name</option>
                         }
@@ -55,15 +58,15 @@
         </div>
     </div>
     <div id="pagination">
-
     </div>
 </div>
 
 @section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-aio-3.2.6.min.js" integrity="sha256-pXMqYvjzxYjuQ3+Iz0Zpw3Tk3BAoet8dOsODol/iqTI=" crossorigin="anonymous"></script>
     <script src="~/js/book/book.js" asp-append-version="true"></script>
     <script src="~/js/book/pagination.js" asp-append-version="true"></script>
     <script asp-append-version="true">
-        createPagination(0, 1, 9,'', 0, 0);
+        createPagination(0, 1, 9, '', 0, 0);
         if (authorSelect != null) {
             authorSelect.addEventListener('change', () => {
                 createPagination(0, 1, 9, '', 0, authorSelect.value);

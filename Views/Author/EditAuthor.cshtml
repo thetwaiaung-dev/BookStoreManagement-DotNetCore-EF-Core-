@@ -1,0 +1,24 @@
+﻿@model AuthorPortalRequestDto;
+
+<h3 class="mb-3">Author Update</h3>
+
+<div class="container">
+    <form asp-controller="Author" asp-action="UpdateAuthor" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label>Author Id</label>
+            <input class="form-control" asp-for="@Model.Author_Id" />
+        </div>
+        <div class="mb-3">
+            <label>Author Name</label>
+            <input class="form-control" asp-for="@Model.Author_Name" />
+        </div>
+        <div class="mb-3">
+            <label>Author Photo</label>
+            <input type="file" class="form-control" asp-for="@Model.AuthorPhoto" />
+        </div>
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>
+
+

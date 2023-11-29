@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace BookManagement.Middleware
@@ -93,7 +94,7 @@ namespace BookManagement.Middleware
 
                 #region text file log
 
-                _logHelper.Info($"Status Code : 500 ,Url :{context.Request.Path}");
+                //_logHelper.Info($"Status Code : 500 ,Url :{context.Request.Path}");
 
                 #endregion
 

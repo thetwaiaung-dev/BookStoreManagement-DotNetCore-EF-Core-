@@ -1,0 +1,3 @@
+2023-11-10 00:27:21.402 +06:30 [INF] Status Code : 500 ,Url :/api/AuthorApi/CreateAuthor
+2023-11-10 00:28:11.043 +06:30 [INF] Status Code : 500 ,Url :/Author/SaveAuthor
+2023-11-10 00:36:34.738 +06:30 [INF] Status Code : 500 ,Url :/Author/SaveAuthor

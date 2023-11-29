@@ -267,8 +267,6 @@ D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Service
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
-D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.Encodings.Web.dll
-D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.Json.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Threading.Channels.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\refs\System.Threading.dll
@@ -374,7 +372,6 @@ D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.MvcA
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.MvcApplicationPartsAssemblyInfo.cache
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.RazorAssemblyInfo.cache
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.RazorAssemblyInfo.cs
-D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.sourcelink.json
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\en-US\BookManagement.resources.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\en-AU\BookManagement.resources.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\staticwebassets.build.json
@@ -393,3 +390,8 @@ D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\BookManagement.genr
 D:\C#\BookStoreUsingC#EFCore\BookManagement\obj\Debug\net6.0\ref\BookManagement.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\Serilog.dll
 D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\RestSharp.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\System.Text.Json.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\C#\BookStoreUsingC#EFCore\BookManagement\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

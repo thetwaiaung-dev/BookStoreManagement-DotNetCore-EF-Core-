@@ -1,7 +1,10 @@
 ﻿using BookManagement.Models;
 using BookManagement.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace BookManagement.Services
@@ -69,9 +72,52 @@ namespace BookManagement.Services
             return author;
         }
 
-        public int Update(BookAuthor entity)
+        public int Update()
         {
             return _dbContent.SaveChanges();
+        }
+
+        public bool IsExist(int id)
+        {
+            bool isExist = _dbContent.Author.AsNoTracking().Any(x => x.Author_Id == id);
+            return isExist;
+        }
+
+        public void SaveImage(string photoFile, string path)
+        {
+            if (photoFile != null && photoFile != string.Empty)
+            {
+                var base64array = Convert.FromBase64String(photoFile);
+
+                File.WriteAllBytes(path, base64array);
+            }
+        }
+
+        public string GetPhotoName(string photo)
+        {
+            string[] strings = photo.Split("_");
+            return strings[strings.Length - 1];
+        }
+
+        public string GetAuthorFolder(string photoName)
+        {
+            string folder = "photos/author/";
+            folder += Guid.NewGuid().ToString() + "_" + photoName;
+
+            return folder;
+        }
+
+        public void RemoveAuthorFolder(string path)
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+
+        public int Update(BookAuthor entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

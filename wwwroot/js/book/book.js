@@ -27,6 +27,7 @@ function createBook(photo, title, author) {
 }
 
 async function getAllBook(searchValue, pageNo, pageSize, categoryId, authorId) {
+    Notiflix.Loading.standard('Wait...');
 
     const data = {
         searchValue: searchValue,
@@ -59,9 +60,12 @@ async function createAllBook(searchValue, pageNo, pageRow, categoryId, authorId)
     const bookList = await getAllBook(searchValue, pageNo, pageRow, categoryId, authorId);
     allBook.innerHTML = '';
 
-    for (const book of bookList.books) {
-        createBook('', book.book_Title, book.author.author_Name)
-    }
+    setTimeout(() => {
+        Notiflix.Loading.remove();
+        for (const book of bookList.books) {
+            createBook('', book.book_Title, book.author.author_Name)
+        }
+    }, 1000)
     return bookList.totalPages;
 }
 

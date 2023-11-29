@@ -7,6 +7,7 @@
         let active;
         let pageCutLow = page - 1;
         let pageCutHigh = page + 1;
+
         // Show the Previous button only if you are on a page other than the first
         if (page > 1) {
             str += '<li class="page-item previous no"><a onclick="createPagination(' + pages + ', ' + (page - 1) + ',' + pageSize + ',' + '\'' + searchValue + '\'' + ',' + categoryId + ',' + authorId + ')">Previous</a></li>';

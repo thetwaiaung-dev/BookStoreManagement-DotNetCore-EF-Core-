@@ -13,7 +13,7 @@ namespace BookManagement.ApiControllers
         private readonly BookService _bookService;
         private readonly AuthorService _authorService;
 
-        public BookApiController(BookService bookService,AuthorService authorService)
+        public BookApiController(BookService bookService, AuthorService authorService)
         {
             _bookService = bookService;
             _authorService = authorService;
@@ -21,10 +21,10 @@ namespace BookManagement.ApiControllers
 
         [HttpPost]
         [Route("/api/bookApi/get-all-books")]
-        public IActionResult GetAllBook([FromBody]BookResponseModel responseModel)
+        public IActionResult GetAllBook([FromBody] BookResponseModel responseModel)
         {
-            var model = _bookService.GetAllBooks(responseModel.searchValue,responseModel.PageNo,responseModel.PageSize,responseModel.CategoryId,responseModel.AuthorId);
-            if(model ==null) return NotFound();
+            var model = _bookService.GetAllBooks(responseModel.searchValue, responseModel.PageNo, responseModel.PageSize, responseModel.CategoryId, responseModel.AuthorId);
+            if (model == null) return NotFound();
 
             return Ok(model);
         }
@@ -34,8 +34,8 @@ namespace BookManagement.ApiControllers
         public IActionResult GetAllAuthor([FromBody] AuthorResponseModel responseModel)
         {
             var model = _authorService.GetAll(responseModel.SearchValue, responseModel.PageNo, responseModel.PageSize, responseModel.CategoryId);
-            if(model==null) return NotFound();
-            
+            if (model == null) return NotFound();
+
             return Ok(model);
         }
 

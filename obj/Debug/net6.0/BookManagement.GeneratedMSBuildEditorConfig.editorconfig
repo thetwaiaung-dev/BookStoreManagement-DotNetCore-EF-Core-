@@ -10,13 +10,23 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookManagement
 build_property.RootNamespace = BookManagement
 build_property.ProjectDir = D:\C#\BookStoreUsingC#EFCore\BookManagement\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\C#\BookStoreUsingC#EFCore\BookManagement
 build_property._RazorSourceGeneratorDebug = 
+
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Author/CreateAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXENyZWF0ZUF1dGhvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Author/EditAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEVkaXRBdXRob3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Author/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/AllAuthor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBbGxBdXRob3IuY3NodG1s
@@ -28,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/AllBooksByCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBbGxCb29rc0J5Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/CreateBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGVCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Book/Index.cshtml]
@@ -68,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#/BookStoreUsingC\#EFCore/BookManagement/Views/_ViewImports.cshtml]

@@ -45,6 +45,13 @@ namespace BookManagement
                 options.Cookie.IsEssential = true;
             });
 
+            services.AddAuthentication().AddCookie("cookieAuth", config =>
+            {
+                config.Cookie.Name = "default";
+                config.LoginPath = "/User/Login";
+            });
+            services.AddAuthorization();
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
@@ -118,6 +125,7 @@ namespace BookManagement
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

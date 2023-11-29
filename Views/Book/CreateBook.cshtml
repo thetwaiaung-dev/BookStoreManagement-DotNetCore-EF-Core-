@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Book Create";
+    IEnumerable<BookCategoryDto> categoryLst = ViewData["CategoryLst"] as IEnumerable<BookCategoryDto>;
+    IEnumerable<AuthorPortalRequestDto> authorLst = ViewData["AuthorLst"] as IEnumerable<AuthorPortalRequestDto>;
+}
+@model BookDto;
+
+<div class="container">
+    <h2>Book Create</h2>
+    <form action="admin/book/save" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label>Category</label>
+            <select class="form-control">
+                @foreach(var category in categoryLst)
+                {
+                    <option>@category.Category_Name</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Author</label>
+            <select class="form-control">
+                @foreach(var author in authorLst)
+                {
+                    <option>@author.Author_Name</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Book Title</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="mb-3">
+            <label>Book Cover</label>
+            <input type="file" class="form-control" />
+        </div>
+    </form>
+</div>

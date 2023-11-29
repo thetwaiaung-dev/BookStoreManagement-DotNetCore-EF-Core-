@@ -1,0 +1,2 @@
+2023-11-11 20:32:36.368 +06:30 [INF] Status Code : 500 ,Url :/api/AuthorApi/EditAuthor/1
+2023-11-11 20:32:40.139 +06:30 [INF] Status Code : 500 ,Url :/author/editauthor/1

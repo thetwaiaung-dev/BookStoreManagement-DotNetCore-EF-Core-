@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "All Authors";
+    IEnumerable<Book> books = ViewData["books"] as IEnumerable<Book>;
+    var category = ViewData["Category"] as BookCategory;
+    var categoryId = ViewData["CategoryId"];
+}
+@model IEnumerable<BookManagement.Models.BookCategory> ;
+
+<div class="container justify-content-end d-flex pr-sm-5 mt-5">
+    <input type="search" id="search-value-author" onkeydown="searchBookCategory(this,@categoryId)" class="form-control col-sm-4" placeholder="Search..." />
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-2">
+            <div>
+                <h3>Categories</h3>
+            </div>
+            <div class="mb-3">
+                <ul class="list-group list-group-flush align-items-start">
+                    <li class="list-group-item p-0 active category-list w-100">
+                        <a class="nav-link text-dark category-btn" href="/book/category/books/0">All</a>
+                    </li>
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-group-item p-0 category-list w-100">
+                            <a class="nav-link text-dark category-btn" href="/book/category/books/@(item.Category_Id)">@item.Category_Name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="container mb-3">
+                <div id="all-author-title">
+                    <h3>@SharedLocalizer[ResourceCode.Authors]</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-1" id="all-authors">
+                    <!--all authors  will be show here-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pagination">
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/book/author.js" asp-append-version="true"></script>
+    <script asp-append-version="true">
+        createPaginationForAuthors(0, 1, 5, '', 0)
+    </script>
+}
+
